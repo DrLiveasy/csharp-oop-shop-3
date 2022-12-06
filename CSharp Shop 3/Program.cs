@@ -13,11 +13,13 @@ Sacchetto_di_frutta sacchettoArance = new Sacchetto_di_frutta("Arance", "Un sacc
 
 Prodotto lavatriceBosch = new Prodotto("Lavatrice Bosch LD2022", 150.00, 22);
 
+Acqua Aqua = new Acqua("Acqua", "Acqua Naturale", 0.60, 0.22, 1.5, 2.2, "sant'anna");
+
 
 Console.WriteLine(goleador.GetNumeroKcalorie());
 
 
-List<Prodotto> scaffaliNegozio = new List<Prodotto>() { lavatriceBosch, goleador, Pokemon, sacchettoArance};
+List<Prodotto> scaffaliNegozio = new List<Prodotto>() { lavatriceBosch, goleador, Pokemon, sacchettoArance, Aqua};
 
 
 foreach (Prodotto articolo in scaffaliNegozio)
