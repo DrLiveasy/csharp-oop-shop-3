@@ -74,17 +74,13 @@ namespace CSharp_Shop_3
 
             if (LitriRiempiti <= MaxLitri)
             {
-                
-               Console.WriteLine("i litri: " + LitriRiempiti);
+               litri += daRiempire;
+               Console.WriteLine("i litri: " + this.litri);
 
             }
             else 
             {
-           
-               
-               Console.WriteLine("i litri: " + MaxLitri);
-                
-
+                throw new NumberOutOfRange("daRiempire", "Hai superato la Capienza massima , l'acqua è caduta per terra!");
             }
         }
         public void svuota()
