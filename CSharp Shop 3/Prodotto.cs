@@ -8,6 +8,8 @@ namespace CSharp_Shop_3
 {
     public class Prodotto
     {
+        private int ContatoreProdotti = 0;
+
         private int codice;
         private string name;
         private string description;
@@ -26,6 +28,7 @@ namespace CSharp_Shop_3
             this.name = name;
             this.prezzo = Math.Round(prezzo,2); //In questo passaggio arrotondo il prezzo a due cifre decimali
             this.IVA = IVA;
+            ContatoreProdotti++;
         }
 
         /// <summary>
@@ -42,6 +45,7 @@ namespace CSharp_Shop_3
             this.description = description;
             this.prezzo = Math.Round(prezzo, 2);
             this.IVA = IVA;
+            ContatoreProdotti++;
         }
 
         public int GetCodice()
@@ -103,6 +107,12 @@ namespace CSharp_Shop_3
         {
             this.IVA = IVA;
         }
+        public int GetQuantitaProdotti()
+        {
+
+            return this.ContatoreProdotti;
+        }
+
 
         /// <summary>
         /// Creo un metodo, privato, che calcoli in maniera randomica il codice da assegnare a un prodotto, da 0 a 99999999
