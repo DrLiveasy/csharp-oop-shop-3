@@ -1,6 +1,10 @@
 ﻿// See https://aka.ms/new-console-template for more information
-
+using CSharp_Shop_3.Custom_Exception;
 using CSharp_Shop_3;
+using System.Runtime.CompilerServices;
+
+
+
 
 
 Caramella goleador = new Caramella("Goleador", "Una buona caramella", 0.10, 22, "frutta", 30);
@@ -13,15 +17,30 @@ Sacchetto_di_frutta sacchettoArance = new Sacchetto_di_frutta("Arance", "Un sacc
 
 Prodotto lavatriceBosch = new Prodotto("Lavatrice Bosch LD2022", 150.00, 22);
 
-Acqua Aqua = new Acqua("Acqua", "Acqua Naturale", 0.60, 0.22, 1.5, 2.2, "sant'anna");
 
 
 Console.WriteLine(goleador.GetNumeroKcalorie());
 
-
+/*
 List<Prodotto> scaffaliNegozio = new List<Prodotto>() { lavatriceBosch, goleador, Pokemon, sacchettoArance, Aqua};
+*/
+
+try
+{
+    Acqua Aqua = new Acqua("Acqua", "Acqua Naturale", 0.60, 0.22, 1.5, 2.2, "sant'anna");
+    Acqua Aqua2 = new Acqua("Acqua", "Acqua Frizzante", 0.70, 0.10, 1.5, 2.3, "sant'anna");
+    Acqua Aqua3 = new Acqua("Acqua", "Acqua Frizzante", 0.70, 0.10, 1.5, -1, "sant'anna");
+    
+}
+catch(NumberOutOfRange e)
+{
+    Console.WriteLine(e.Message);
+}
+
+    
 
 
+/*
 foreach (Prodotto articolo in scaffaliNegozio)
 {
 
@@ -39,4 +58,6 @@ foreach (Prodotto articolo in scaffaliNegozio)
     }
     articolo.StampaProdotto();
    
-}
+}*/
+
+Console.WriteLine("------------------------\n"+"ci sono "+Prodotto.GetQuantitaProdotti() + " prodotti nel negozi!");

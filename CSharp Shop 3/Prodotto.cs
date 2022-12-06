@@ -8,7 +8,7 @@ namespace CSharp_Shop_3
 {
     public class Prodotto
     {
-        private int ContatoreProdotti = 0;
+        private static int ContatoreProdotti = 0;
 
         private int codice;
         private string name;
@@ -107,10 +107,9 @@ namespace CSharp_Shop_3
         {
             this.IVA = IVA;
         }
-        public int GetQuantitaProdotti()
+        public static int GetQuantitaProdotti()
         {
-
-            return this.ContatoreProdotti;
+            return ContatoreProdotti;
         }
 
 
