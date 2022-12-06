@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
+using CSharp_Shop_3.Custom_Exception;
 
 namespace CSharp_Shop_3
 {
@@ -26,7 +27,15 @@ namespace CSharp_Shop_3
         {
             this.sorgente = sorgente;
             this.litri = litri;
-            this.ph = ph;
+            if (ph < 0 ||ph > 10)
+            {
+                throw new NumberOutOfRange("ph", "non si può creare un’acqua se la bottiglia ha un ph negativo, oppure superiore a 10");
+            }
+            else
+            {
+                this.ph = ph;
+            }
+            
         }
         //Getters
         public double GetLitri()
