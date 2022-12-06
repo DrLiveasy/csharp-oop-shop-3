@@ -65,7 +65,7 @@ namespace CSharp_Shop_3
             }
             else 
             {
-                Console.WriteLine("Mi dispaiace i litri richiesti da bere non ci sono");
+                throw new NumberOutOfRange("DaBere", "mi dispiace è finita l'acqua!");
             }
         }
         public void RiempieLaBottiglia(double daRiempire)
