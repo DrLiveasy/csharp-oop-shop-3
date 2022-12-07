@@ -10,10 +10,10 @@ namespace CSharp_Shop_3.Metodi_Staici
     {
         public static readonly double GalloneALitro = 3.785;
 
-        public static double convertiLitriInGalloni(string litriDaConvertire)
+        public static double convertiLitriInGalloni(double litriDaConvertire)
         {
             
-            double Litri = double.Parse(litriDaConvertire);
+            double Litri = litriDaConvertire;
             double Galloni = Litri * GalloneALitro;
 
             return Galloni;
